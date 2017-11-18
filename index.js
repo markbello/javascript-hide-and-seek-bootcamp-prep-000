@@ -19,10 +19,11 @@ function increaseRankBy(n){
 function deepestChild(){
   let node = document.getElementById('grand-node');
   console.log(`the node is ${node}`);
-  let current = node.querySelector('div');
+  console.log(`its childrens be ${node.children}`);
+  let current = node.querySelectorAll('div');
   console.log(`current is ${current}`);
   let keys = Object.keys(current);
-  console.log(`current.length is ${keys}`);
+  console.log(`current.length is ${current.length}`);
   let next = [];
   let selector = '#grand-node div';
   while(current.length > 0){
