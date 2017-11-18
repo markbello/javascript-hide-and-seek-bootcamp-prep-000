@@ -25,14 +25,12 @@ function deepestChild(){
   let keys = Object.keys(current);
   console.log(`current.length is ${current.length}`);
   let next = [];
-  let selector = '#grand-node div';
+  let selector = '#grand-node';
   while(current.length > 0){
-    if(current.querySelector('div') > 0){
-      for(var i = 0; i < current.length; i++){
-        next.push(current.querySelectorAll('div'));
-        selector += ' div';
-        console.log(`selector is ${selector}`);
-      }
+    for(var i = 0; i < current.length; i++){
+      next.push(current[i].querySelector('div'));
+      selector += ' div';
+      console.log(`selector is ${selector}`);
     }
     current = next.shift();
   }
