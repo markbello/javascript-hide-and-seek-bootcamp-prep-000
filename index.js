@@ -21,10 +21,12 @@ function deepestChild(){
   console.log(`the node is ${node}`);
   let current = node.querySelector('div');
   console.log(`current is ${current}`);
+  let keys = Object.keys(current);
+  console.log(`current.length is ${keys}`);
   let next = [];
   let selector = '#grand-node div';
   while(current.length > 0){
-    if(current.querySelectorAll('div') > 0){
+    if(current.querySelector('div') > 0){
       for(var i = 0; i < current.length; i++){
         next.push(current.querySelectorAll('div'));
         selector += ' div';
