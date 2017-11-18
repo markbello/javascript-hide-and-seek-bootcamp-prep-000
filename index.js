@@ -17,21 +17,21 @@ function increaseRankBy(n){
 }
 
 function deepestChild(){
-  let node = document.querySelector('div#grand-node');
-  console.log(`node is ${node}`);
-  let current = node.children;
-  console.log(`current is ${current} and ${current.length} long`);
+  let node = document.getElementById('div#grand-node');
+  let current = node.querySelector('div');
   let next = [];
   let selector = '#grand-node div';
-  while(current){
-    if(current.children > 0){
-      next.push(current.children.querySelector('div'));
-      selector += ' div';
-      console.log(`selector is ${selector}`);
+  while(current.length > 0){
+    if(current.querySelectorAll('div') > 0){
+      for(var i = 0; i < current.length; i++){
+        next.push(current.querySelectorAll('div'));
+        selector += ' div';
+        console.log(`selector is ${selector}`);
+      }
     }
     current = next.shift();
   }
-  console.log(`the final selector is ${selector}`);
+
   return document.querySelector(selector);
 }
 
